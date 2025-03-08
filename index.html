@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rex & Eddie: Mystery in Cloisterham</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-overlay">
+            <!-- Game Title Banner -->
+            <div id="game-title">
+                <h1>Rex & Eddie: Mystery in Cloisterham</h1>
+                <p>Explore the town and solve the mystery!</p>
+            </div>
+            
+            <!-- Dialog Box -->
+            <div id="dialog-box" class="hidden">
+                <p id="dialog-text"></p>
+                <button id="dialog-close"><i class="fas fa-check"></i> Close</button>
+            </div>
+            
+            <!-- Inventory -->
+            <div id="inventory" class="hidden">
+                <h3><i class="fas fa-briefcase"></i> Inventory</h3>
+                <div id="inventory-items"></div>
+                <button id="inventory-close"><i class="fas fa-times"></i> Close</button>
+            </div>
+            
+            <!-- Controls Hint -->
+            <div id="controls-hint">
+                <p>WASD: Move | E: Interact | I: Inventory</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/engine.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/character.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

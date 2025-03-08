@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #3a506b;
+    --secondary-color: #1c2541;
+    --accent-color: #6fffe9;
+    --text-color: #eef4ed;
+    --ui-background: rgba(28, 37, 65, 0.9);
+    --ui-border: #5bc0be;
+    --button-color: #5bc0be;
+    --button-hover: #3a8f8d;
+    --inventory-bg: #2b3a67;
+    --inventory-item-bg: #3a506b;
+    --inventory-item-hover: #5bc0be;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #0b132b;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #1c2541;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#ui-overlay > div {
+    pointer-events: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Game title banner */
+#game-title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--ui-background);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid var(--ui-border);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+#game-title:hover {
+    opacity: 1;
+}
+
+#game-title h1 {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--accent-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#game-title p {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Dialog box styling */
+#dialog-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    background-color: var(--ui-background);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--ui-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    /* Removed animation for a more stable UI */
+}
+
+#dialog-text {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+button {
+    background-color: var(--button-color);
+    color: #0b132b;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    /* Removed transform and reduced shadow for less flashy effect */
+}
+
+button:active {
+    /* Simplified active state */
+    background-color: var(--button-hover);
+}
+
+/* Inventory styling */
+#inventory {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: var(--ui-background);
+    color: var(--text-color);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid var(--ui-border);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    /* Removed animation for a more stable UI */
+}
+
+#inventory h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#inventory-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.inventory-item {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: var(--inventory-item-bg);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+.inventory-item:hover {
+    background-color: var(--inventory-item-hover);
+    /* Removed transform and reduced shadow for less flashy effect */
+}
+
+#inventory-close {
+    display: block;
+    margin: 0 auto;
+    padding: 8px 20px;
+}
+
+/* Controls hint */
+#controls-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--ui-background);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    pointer-events: auto;
+}
+
+#controls-hint:hover {
+    opacity: 1;
+}
