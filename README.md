@@ -10,6 +10,8 @@ This game is an open-world detective adventure where players take on the role of
 
 This project is hosted on GitHub at: [https://github.com/emscape/rex-and-eddie-mystery-game](https://github.com/emscape/rex-and-eddie-mystery-game)
 
+The repository is now active and fully integrated with the project. All code, assets, and documentation are available on GitHub.
+
 You can clone the repository using:
 ```
 git clone https://github.com/emscape/rex-and-eddie-mystery-game.git
